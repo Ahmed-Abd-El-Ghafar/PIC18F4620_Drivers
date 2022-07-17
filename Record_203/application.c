@@ -34,9 +34,11 @@ int main() {
         ret = SPI_Send_Byte(&SPI_Obj, 'a');
         ret = SPI_Read_Byte(&SPI_Obj, &SPI_Msater_Side_Slave1_RetVal);
         __delay_ms(250);
+        
         ret = SPI_Send_Byte(&SPI_Obj, 'b');
         ret = SPI_Read_Byte(&SPI_Obj, &SPI_Msater_Side_Slave1_RetVal);
         __delay_ms(250);
+        
         ret = gpio_pin_write_logic(&SPI_SS1, GPIO_HIGH);
     }
     return (EXIT_SUCCESS);

@@ -4906,9 +4906,11 @@ int main() {
         ret = SPI_Send_Byte(&SPI_Obj, 'a');
         ret = SPI_Read_Byte(&SPI_Obj, &SPI_Msater_Side_Slave1_RetVal);
         _delay((unsigned long)((250)*(4000000UL/4000.0)));
+
         ret = SPI_Send_Byte(&SPI_Obj, 'b');
         ret = SPI_Read_Byte(&SPI_Obj, &SPI_Msater_Side_Slave1_RetVal);
         _delay((unsigned long)((250)*(4000000UL/4000.0)));
+
         ret = gpio_pin_write_logic(&SPI_SS1, GPIO_HIGH);
     }
     return (0);

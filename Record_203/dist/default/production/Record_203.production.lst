@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Mon Dec 20 15:22:01 2021
+                                                                                               Sun Jul 17 15:32:46 2022
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	18F4620
@@ -631,7 +631,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    617 ;; Auto vars:     Size  Location     Type
    618 ;;  ret             1    0        unsigned char 
    619 ;; Return value:  Size  Location     Type
-   620 ;;                  2  1634[None  ] int 
+   620 ;;                  2  1718[None  ] int 
    621 ;; Registers used:
    622 ;;		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
    623 ;; Tracked objects:
@@ -767,7 +767,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    748  001886  6E68               	movwf	(SPI_Read_Byte@_data+1)^0,c
    749  001888  ECF3  F00C         	call	_SPI_Read_Byte	;wreg free
    750  00188C                     
-   751                           ;application.c: 39:         _delay((unsigned long)((250)*(4000000UL/4000.0)));
+   751                           ;application.c: 40:         _delay((unsigned long)((250)*(4000000UL/4000.0)));
    752  00188C  0E02               	movlw	2
    753  00188E  6E79               	movwf	(??_main+1)^0,c
    754  001890  0E45               	movlw	69
@@ -1136,7 +1136,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1100                           
   1101 ;; *************** function _application_intialize *****************
   1102 ;; Defined at:
-  1103 ;;		line 45 in file "application.c"
+  1103 ;;		line 47 in file "application.c"
   1104 ;; Parameters:    Size  Location     Type
   1105 ;;		None
   1106 ;; Auto vars:     Size  Location     Type
@@ -1175,7 +1175,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1134  001B4A                     _application_intialize:
   1135                           	callstack 27
   1136  001B4A                     
-  1137                           ;application.c: 47:     ecu_layer_intialize();
+  1137                           ;application.c: 49:     ecu_layer_intialize();
   1138  001B4A  ECBA  F00D         	call	_ecu_layer_intialize	;wreg free
   1139  001B4E  0012               	return		;funcret
   1140  001B50                     __end_of_application_intialize:
@@ -1275,21 +1275,21 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1224  001A64  EF36  F00D         	goto	u3671
   1225  001A68  EF38  F00D         	goto	u3670
   1226  001A6C                     u3671:
-  1227  001A6C  EF3A  F00D         	goto	l1677
+  1227  001A6C  EF3A  F00D         	goto	l1297
   1228  001A70                     u3670:
   1229  001A70                     
   1230                           ;MCAL_Layer/SPI/hal_spi.c: 73:     }
   1231  001A70  EF44  F00D         	goto	l5392
-  1232  001A74                     l1677:
+  1232  001A74                     l1297:
   1233                           
   1234                           ;MCAL_Layer/SPI/hal_spi.c: 75:         SSPBUF = _data;
   1235  001A74  C067  FFC9         	movff	SPI_Send_Byte@_data,4041	;volatile
-  1236  001A78                     l1679:
+  1236  001A78                     l1299:
   1237  001A78  A69E               	btfss	158,3,c	;volatile
   1238  001A7A  EF41  F00D         	goto	u3681
   1239  001A7E  EF43  F00D         	goto	u3680
   1240  001A82                     u3681:
-  1241  001A82  EF3C  F00D         	goto	l1679
+  1241  001A82  EF3C  F00D         	goto	l1299
   1242  001A86                     u3680:
   1243  001A86                     
   1244                           ;MCAL_Layer/SPI/hal_spi.c: 77:         PIR1bits.SSPIF = 0;
@@ -1361,18 +1361,18 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1305  0019FE  EF03  F00D         	goto	u3701
   1306  001A02  EF05  F00D         	goto	u3700
   1307  001A06                     u3701:
-  1308  001A06  EF07  F00D         	goto	l1689
+  1308  001A06  EF07  F00D         	goto	l1309
   1309  001A0A                     u3700:
   1310  001A0A                     l5402:
   1311                           
   1312                           ;MCAL_Layer/SPI/hal_spi.c: 88:     }
   1313  001A0A  EF14  F00D         	goto	l5406
-  1314  001A0E                     l1689:
+  1314  001A0E                     l1309:
   1315  001A0E  A0C7               	btfss	199,0,c	;volatile
   1316  001A10  EF0C  F00D         	goto	u3711
   1317  001A14  EF0E  F00D         	goto	u3710
   1318  001A18                     u3711:
-  1319  001A18  EF07  F00D         	goto	l1689
+  1319  001A18  EF07  F00D         	goto	l1309
   1320  001A1C                     u3710:
   1321  001A1C                     
   1322                           ;MCAL_Layer/SPI/hal_spi.c: 91:         *_data = SSPBUF;
@@ -1438,12 +1438,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1377  001422  EF15  F00A         	goto	u3601
   1378  001426  EF17  F00A         	goto	u3600
   1379  00142A                     u3601:
-  1380  00142A  EF19  F00A         	goto	l1660
+  1380  00142A  EF19  F00A         	goto	l1280
   1381  00142E                     u3600:
   1382  00142E                     
   1383                           ;MCAL_Layer/SPI/hal_spi.c: 21:     }
   1384  00142E  EFB7  F00A         	goto	l5382
-  1385  001432                     l1660:
+  1385  001432                     l1280:
   1386                           
   1387                           ;MCAL_Layer/SPI/hal_spi.c: 24:         (SSPCON1bits.SSPEN = 0);
   1388  001432  9AC6               	bcf	198,5,c	;volatile
@@ -1700,14 +1700,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1619  0019CC  EFEA  F00C         	goto	u3491
   1620  0019D0  EFEC  F00C         	goto	u3490
   1621  0019D4                     u3491:
-  1622  0019D4  EFF2  F00C         	goto	l1725
+  1622  0019D4  EFF2  F00C         	goto	l1345
   1623  0019D8                     u3490:
   1624  0019D8  0E74               	movlw	low MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SS
   1625  0019DA  6E65               	movwf	gpio_pin_direction_intialize@_pin_config^0,c
   1626  0019DC  0E00               	movlw	high MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SS
   1627  0019DE  6E66               	movwf	(gpio_pin_direction_intialize@_pin_config+1)^0,c
   1628  0019E0  ECB9  F00A         	call	_gpio_pin_direction_intialize	;wreg free
-  1629  0019E4                     l1725:
+  1629  0019E4                     l1345:
   1630  0019E4  0012               	return		;funcret
   1631  0019E6                     __end_of_MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations:
   1632                           	callstack 0
@@ -1795,10 +1795,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1703 ;;		line 25 in file "MCAL_Layer/GPIO/hal_gpio.c"
   1704 ;; Parameters:    Size  Location     Type
   1705 ;;  _pin_config     2    1[COMRAM] PTR const struct .
-  1706 ;;		 -> MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SS(1), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_CLK(1), M
-      +SSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDI(1), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDO(1), 
-  1707 ;;		 -> MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_CLK(1), MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDI(1)
-      +, MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDO(1), SPI_SS1(1), 
+  1706 ;;		 -> SPI_SS1(1), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SS(1), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@S
+      +PI_CLK(1), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDI(1), 
+  1707 ;;		 -> MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDO(1), MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_CLK(1),
+      + MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDI(1), MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDO(1), 
   1708 ;;		 -> relay_initialize@pin_obj(1), led_initialize@pin_obj(1), 
   1709 ;; Auto vars:     Size  Location     Type
   1710 ;;  ret             1    9[COMRAM] unsigned char 
@@ -3959,26 +3959,11 @@ Pointer List with Targets:
     MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@Config	PTR const struct . size(2) Largest target is 2
 		 -> SPI_Obj(COMRAM[2]), 
 
-    S4844_IO_FILE$buffer	PTR unsigned char  size(2) Largest target is 6
+    S4833_IO_FILE$buffer	PTR unsigned char  size(2) Largest target is 6
 		 -> convert_uint16_to_string@Temp_String(COMRAM[6]), 
 
     f.buffer	PTR unsigned char  size(2) Largest target is 6
 		 -> convert_uint16_to_string@Temp_String(COMRAM[6]), 
-
-    MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@Config	PTR const struct . size(2) Largest target is 2
-		 -> SPI_Obj(COMRAM[2]), 
-
-    SPI_Read_Byte@_data	PTR unsigned char  size(2) Largest target is 1
-		 -> SPI_Msater_Side_Slave1_RetVal(COMRAM[1]), 
-
-    SPI_Read_Byte@Config	PTR const struct . size(2) Largest target is 2
-		 -> SPI_Obj(COMRAM[2]), 
-
-    SPI_Send_Byte@Config	PTR const struct . size(2) Largest target is 2
-		 -> SPI_Obj(COMRAM[2]), 
-
-    SPI_Init@Config	PTR const struct . size(2) Largest target is 2
-		 -> SPI_Obj(COMRAM[2]), 
 
     EUSART_OverrunErrorHandler	PTR FTN()void  size(2) Largest target is 1
 		 -> Absolute function(), 
@@ -4008,19 +3993,19 @@ Pointer List with Targets:
 
     EUSART_ASYNC_TX_Init@_eusart.EUSART_TxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
-    S3646$EUSART_OverrunErrorHandler	PTR FTN()void  size(2) Largest target is 0
+    S3908$EUSART_OverrunErrorHandler	PTR FTN()void  size(2) Largest target is 0
 
     EUSART_Baud_Rate_Calculation@_eusart.EUSART_OverrunErrorHandler	PTR FTN()void  size(2) Largest target is 0
 
-    S3646$EUSART_FramingErrorHandler	PTR FTN()void  size(2) Largest target is 0
+    S3908$EUSART_FramingErrorHandler	PTR FTN()void  size(2) Largest target is 0
 
     EUSART_Baud_Rate_Calculation@_eusart.EUSART_FramingErrorHandler	PTR FTN()void  size(2) Largest target is 0
 
-    S3646$EUSART_RxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 0
+    S3908$EUSART_RxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
     EUSART_Baud_Rate_Calculation@_eusart.EUSART_RxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
-    S3646$EUSART_TxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 0
+    S3908$EUSART_TxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
     EUSART_Baud_Rate_Calculation@_eusart.EUSART_TxDefaultInterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
@@ -4029,14 +4014,14 @@ Pointer List with Targets:
     TMR3_InterruptHandler	PTR FTN()void  size(2) Largest target is 1
 		 -> Absolute function(), 
 
-    S3452$TMR3_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
+    S3714$TMR3_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
     Timer3_Init@_timer.TMR3_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
     TMR2_InterruptHandler	PTR FTN()void  size(2) Largest target is 1
 		 -> Absolute function(), 
 
-    S3323$TMR2_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
+    S3585$TMR2_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
     Timer2_Init@_timer.TMR2_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
@@ -4045,7 +4030,7 @@ Pointer List with Targets:
     TMR1_InterruptHandler	PTR FTN()volatile void  size(2) Largest target is 1
 		 -> Absolute function(), 
 
-    S3133$TMR1_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
+    S3395$TMR1_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
     Timer1_Init@_timer.TMR1_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
@@ -4058,9 +4043,24 @@ Pointer List with Targets:
     TMR0_InterruptHandler	PTR FTN()void  size(2) Largest target is 1
 		 -> Absolute function(), 
 
-    S2968$TMR0_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
+    S3230$TMR0_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
     Timer0_Init@_timer.TMR0_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
+
+    MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@Config	PTR const struct . size(2) Largest target is 2
+		 -> SPI_Obj(COMRAM[2]), 
+
+    SPI_Read_Byte@_data	PTR unsigned char  size(2) Largest target is 1
+		 -> SPI_Msater_Side_Slave1_RetVal(COMRAM[1]), 
+
+    SPI_Read_Byte@Config	PTR const struct . size(2) Largest target is 2
+		 -> SPI_Obj(COMRAM[2]), 
+
+    SPI_Send_Byte@Config	PTR const struct . size(2) Largest target is 2
+		 -> SPI_Obj(COMRAM[2]), 
+
+    SPI_Init@Config	PTR const struct . size(2) Largest target is 2
+		 -> SPI_Obj(COMRAM[2]), 
 
     Interrupt_INTx_SetInterruptHandler@int_obj.EXT_InterruptHandler	PTR FTN()void  size(2) Largest target is 0
 
@@ -4164,8 +4164,8 @@ Pointer List with Targets:
 		 -> led_turn_off@pin_obj(COMRAM[1]), led_turn_on@pin_obj(COMRAM[1]), led_initialize@pin_obj(COMRAM[1]), 
 
     gpio_pin_direction_intialize@_pin_config	PTR const struct . size(2) Largest target is 1
-		 -> MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SS(COMRAM[1]), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_CLK(COMRAM[1]), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDI(COMRAM[1]), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDO(COMRAM[1]), 
-		 -> MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_CLK(COMRAM[1]), MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDI(COMRAM[1]), MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDO(COMRAM[1]), SPI_SS1(COMRAM[1]), 
+		 -> SPI_SS1(COMRAM[1]), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SS(COMRAM[1]), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_CLK(COMRAM[1]), MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDI(COMRAM[1]), 
+		 -> MSSP_SPI_Slave_Mode_GPIO_PIN_Configurations@SPI_SDO(COMRAM[1]), MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_CLK(COMRAM[1]), MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDI(COMRAM[1]), MSSP_SPI_Msster_Mode_GPIO_PIN_Configurations@SPI_SDO(COMRAM[1]), 
 		 -> relay_initialize@pin_obj(COMRAM[1]), led_initialize@pin_obj(COMRAM[1]), 
 
     port_registers	PTR volatile unsigned char [5] size(2) Largest target is 1
@@ -4599,7 +4599,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Mon Dec 20 15:22:01 2021
+Symbol Table                                                                                   Sun Jul 17 15:32:46 2022
 
                                    ??_InterruptManager 0065  
                       __end_of_MSSP_SPI_Interrupt_Init 1B78  
@@ -4621,32 +4621,33 @@ Symbol Table                                                                    
                                       __end_of_RB5_ISR 1AFA  
                                       __end_of_RB6_ISR 1AE0  
                                       __end_of_RB7_ISR 1AC6  
-                                                 l1704 1B76  
-                                                 l1713 1A5C  
-                                                 l1641 1B4E  
-                                                 l1660 1432  
-                                                 l1725 19E4  
+                                                 l1301 1A86  
+                                                 l1302 1A8A  
+                                                 l1312 1A2A  
+                                                 l1324 1B76  
+                                                 l1333 1A5C  
+                                                 l1309 1A0E  
+                                                 l1280 1432  
+                                                 l1345 19E4  
+                                                 l1289 1570  
+                                                 l1297 1A74  
+                                                 l1299 1A78  
+                                                 l1725 1B4E  
                                                  l5110 15AA  
                                                  l5112 15B2  
                                                  l5120 16B2  
                                                  l5104 1572  
                                                  l2536 1B74  
-                                                 l1681 1A86  
                                                  l5114 1614  
                                                  l5106 1576  
-                                                 l1682 1A8A  
                                                  l5130 16BA  
                                                  l5108 1588  
-                                                 l1692 1A2A  
                                                  l5132 16CC  
-                                                 l1669 1570  
-                                                 l1677 1A74  
                                                  l5118 1670  
                                                  l5230 1A38  
                                                  l5222 1A2C  
                                                  l5142 17B4  
                                                  l5134 16EE  
-                                                 l1679 1A78  
                                                  l5232 1A44  
                                                  l5224 1A2C  
                                                  l5240 198E  
@@ -4654,7 +4655,6 @@ Symbol Table                                                                    
                                                  l5136 16F6  
                                                  l5144 17DE  
                                                  l5128 16B6  
-                                                 l1689 1A0E  
                                                  l5234 1A50  
                                                  l5226 1A30  
                                                  l5250 19B2  
@@ -4667,7 +4667,6 @@ Symbol Table                                                                    
                                                  l5244 1996  
                                                  l5236 198A  
                                                  l5404 1A1C  
-                                                 l2924 1B4A  
                                                  l5260 18CC  
                                                  l6140 17F6  
                                                  l6132 17E6  
@@ -4676,7 +4675,6 @@ Symbol Table                                                                    
                                                  l5238 198A  
                                                  l5350 141C  
                                                  l5406 1A28  
-                                                 l2926 1B4A  
                                                  l5262 18EE  
                                                  l6150 1812  
                                                  l6142 1802  
@@ -4722,8 +4720,10 @@ Symbol Table                                                                    
                                                  l6178 169C  
                                                  l5378 1560  
                                                  l5386 1A5E  
+                                                 l2986 1B4A  
                                                  l5396 19E6  
                                                  l5388 1A5E  
+                                                 l2988 1B4A  
                                                  l5398 19E6  
                                                  STR_1 1011  
                                                  _LATA 000F89  
@@ -4878,11 +4878,11 @@ Symbol Table                                                                    
                                                i2l1220 1078  
                                                i2l1230 11CC  
                                                i2l1222 10BC  
-                                               i2l1303 1B36  
                                                i2l1240 12D8  
                                                i2l1232 1210  
                                                i2l1224 1100  
                                                i2l1216 1038  
+                                               i2l1321 1B78  
                                                i2l1250 1378  
                                                i2l1242 12F8  
                                                i2l1234 1254  
@@ -4896,18 +4896,19 @@ Symbol Table                                                                    
                                                i2l1254 13B8  
                                                i2l1246 1338  
                                                i2l1238 12B8  
-                                               i2l1423 1B48  
                                                i2l1256 13D8  
                                                i2l1248 1358  
                                                i2l1258 13F8  
-                                               i2l1372 1B2A  
-                                               i2l1701 1B78  
-                                               i2l1608 1B7A  
-                                               i2l1467 1B1E  
+                                               i2l1507 1B48  
+                                               i2l1551 1B1E  
+                                               i2l1456 1B2A  
+                                               i2l1387 1B36  
                      __size_of_MSSP_SPI_Interrupt_Init 0002  
                                                i2l2800 1AC8  
                                                i2l2722 1B6C  
                                                i2l2802 1ACA  
+                                               i2l1683 1B66  
+                                               i2l1692 1B7A  
                                                i2l4500 10F6  
                                                i2l2718 1B70  
                                                i2l2750 1B54  
@@ -4915,7 +4916,6 @@ Symbol Table                                                                    
                                                i2l2814 1AAE  
                                                i2l4510 113A  
                                                i2l4502 10FA  
-                                               i2l1599 1B66  
                                                i2l2728 1B68  
                                                i2l2904 1B7A  
                                                i2l2760 1B5C  
